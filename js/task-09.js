@@ -3,11 +3,13 @@ function getRandomHexColor() {
 }
 
 const buttonRef = document.querySelector('.change-color');
+const bodyRef = document.querySelector('body');
+const textColorRef = document.querySelector('.color');
 
-const colorChanger = event => {};
+const colorChanger = () => {
+  const randomColor = getRandomHexColor();
+  bodyRef.style.backgroundColor = randomColor;
+  textColorRef.innerHTML = randomColor;
+};
 
 buttonRef.addEventListener('click', colorChanger);
-
-const bodyRef = document.querySelector('body');
-// bodyRef.innerHTML = '<body style="background-color: ;">';
-// bodyRef.style.backgroundColor = 'red';
