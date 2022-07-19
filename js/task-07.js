@@ -1,11 +1,9 @@
 const inputRef = document.querySelector('#font-size-control');
 const textRef = document.querySelector('#text');
-
+const body = document.querySelector('body');
 const fontControl = event => {
   const size = event.currentTarget.value;
-  const markup = ` <span id="text" style="font-size: ${size}px">Abracadabra!</span>`;
-
-  textRef.innerHTML = markup;
+  textRef.style.fontSize = `${size}px`;
 };
 
 inputRef.addEventListener('input', fontControl);
