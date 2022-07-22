@@ -1,14 +1,14 @@
 const validInputRef = document.querySelector('#validation-input');
 
-console.log(validInputRef.dataset.length);
+const checking = Number(validInputRef.dataset.length);
 
 const correctInput = event => {
-  if (validInputRef.dataset.length > event.currentTarget.value.length) {
-    validInputRef.classList.add('invalid');
-  } else {
+  const checking = Number(validInputRef.dataset.length);
+
+  if (checking === event.currentTarget.value.length) {
     validInputRef.classList.remove('invalid');
     validInputRef.classList.add('valid');
-  }
+  } else validInputRef.classList.add('invalid');
 };
 
 validInputRef.addEventListener('blur', correctInput);
